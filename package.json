@@ -1,0 +1,34 @@
+{
+  "name": "imdb-app",
+  "version": "1.0.0",
+  "description": "Semestrální práce - IMDB aplikace s Node.js",
+  "main": "server/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server/app.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "dev": "node --watch server/app.js"
+  },
+  "keywords": [
+    "nodejs",
+    "imdb",
+    "movies",
+    "websockets",
+    "authentication",
+    "reviews"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hono/node-server": "^2.0.3",
+    "bcrypt": "^5.1.1",
+    "better-sqlite3": "^12.10.0",
+    "drizzle-orm": "^0.45.2",
+    "hono": "^4.12.21",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "jest": "^30.4.2",
+    "supertest": "^7.2.2"
+  }
+}

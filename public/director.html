@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Detail režiséra</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>🎬 IMDB Clone</h1>
+            <nav>
+                <button class="theme-toggle-button" onclick="toggleTheme()" id="themeToggle" aria-label="Přepnout téma">🌙</button>
+                <div class="header-actions">
+                    <div id="authButtons">
+                        <button onclick="showLogin()">Přihlášení</button>
+                        <button onclick="showRegister()">Registrace</button>
+                    </div>
+                    <div id="userMenu" style="display: none;">
+                        <span id="username"></span>
+                        <button id="profileButton" onclick="goToProfile()" style="display: none;">Profil</button>
+                        <button onclick="logout()">Odhlásit</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <button onclick="history.back()" class="back-button">← Zpět</button>
+
+        <div id="directorDetail" class="director-detail-page"></div>
+
+        <div id="notification" class="notification"></div>
+    </div>
+
+    <!-- Modal pro přihlášení -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Přihlášení</h2>
+            <form onsubmit="login(event)">
+                <input type="text" id="loginUsername" placeholder="Uživatelské jméno" required>
+                <input type="password" id="loginPassword" placeholder="Heslo" required>
+                <div class="form-error" id="loginError"></div>
+                <button type="submit">Přihlásit se</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal pro registraci -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2>Registrace</h2>
+            <form onsubmit="register(event)">
+                <input type="text" id="regUsername" placeholder="Uživatelské jméno" required>
+                <input type="email" id="regEmail" placeholder="Email" required>
+                <input type="password" id="regPassword" placeholder="Heslo (min. 6 znaků)" required>
+                <div class="form-error" id="registerError"></div>
+                <button type="submit">Zaregistrovat se</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+
+</html>

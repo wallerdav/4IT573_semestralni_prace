@@ -155,3 +155,5 @@ ISC
 **Autor**: David  
 **Vytvořeno**: 2026  
 **Předmět**: 4IT573 - Semestrální Práce
+
+# 4IT573_semestralni_prace
